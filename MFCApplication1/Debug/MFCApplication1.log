@@ -1,0 +1,3 @@
+﻿  MFCApplication1.cpp
+D:\Class\6.0\TTx\MFCApplication1\MFCApplication1.cpp(123,8): warning C4101:  'TID1' :참조되지 않은 지역 변수입니다.
+  MFCApplication1.vcxproj -> D:\Class\6.0\TTx\Debug\MFCApplication1.exe
