@@ -34,6 +34,9 @@ class Z : virtual public A {
 
 
 
+int tta = 44;
+int ttb;
+
 
 int Test()
 {
@@ -44,6 +47,11 @@ int Test()
 
 void main()
 {
+	int* ttc = new int(20);
+	delete ttc;
+
+	int ttd = 19;
+
 	std::cout << "int* : " << sizeof(int*) << std::endl;
 	typedef void(K:: * fk)();
 	std::cout << "일반클래스맴버함수포인터 : " << sizeof(fk) << std::endl;

@@ -1,3 +1,1 @@
-﻿  MFCApplication1.cpp
-D:\Class\6.0\TTx\MFCApplication1\MFCApplication1.cpp(123,8): warning C4101:  'TID1' :참조되지 않은 지역 변수입니다.
-  MFCApplication1.vcxproj -> D:\Class\6.0\TTx\Debug\MFCApplication1.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(418,5): error MSB8041: MFC libraries are required for this project. Install them from the Visual Studio installer (Individual Components tab) for any toolsets and architectures being used.

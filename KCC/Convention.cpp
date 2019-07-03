@@ -1,6 +1,6 @@
-//#include "Convention.h"
-//#include <xmmintrin.h>
-//#include <iostream>
+#include "Convention.h"
+#include <xmmintrin.h>
+#include <iostream>
 //
 //
 //class ACC
@@ -250,26 +250,43 @@
 //	return b;
 //}
 //
-//int __cdecl main(void)
-//{
-//	hva4 h4;
-//	hva2 h2;
-//	int i;
-//	float f;
-//	__m128 a, b, d;
-//	__m256 c, e;
-//	a = b = d = _mm_set1_ps(3.0f);
-//	c = e = _mm256_set1_ps(5.0f);
-//	h2.array[0] = _mm_set1_ps(6.0f);
-//	h4.array[0] = _mm256_set1_ps(7.0f);
-//	b = example1(a, b, c, d, e);
-//	e = example2(1, b, 3, d, e, 6.0f, 7);
-//	d = example3(1, h2, 3, 4, 5);
-//	f = example4(1, 2.0f, h4, d, 5);
-//	i = example5(1, h2, 3, h4, 5);
-//	h4 = example6(h2, h4, c, h2);
-//	f = example7(1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f, 9.0f, 10.0f, 11.0f, 12.0f);
-//	i = example8(1,2,3,4,5,6,7,8,9,10,11,12);
-//	f = example7x(1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f, 9.0f, 10.0f, 11.0f, 12.0f);
-//	i = example8x(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
-//}
+int __cdecl main(void)
+{
+	/*hva4 h4;
+	hva2 h2;
+	int i;
+	float f;
+	__m128 a, b, d;
+	__m256 c, e;
+	a = b = d = _mm_set1_ps(3.0f);
+	c = e = _mm256_set1_ps(5.0f);
+	h2.array[0] = _mm_set1_ps(6.0f);
+	h4.array[0] = _mm256_set1_ps(7.0f);
+	b = example1(a, b, c, d, e);
+	e = example2(1, b, 3, d, e, 6.0f, 7);
+	d = example3(1, h2, 3, 4, 5);
+	f = example4(1, 2.0f, h4, d, 5);
+	i = example5(1, h2, 3, h4, 5);
+	h4 = example6(h2, h4, c, h2);
+	f = example7(1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f, 9.0f, 10.0f, 11.0f, 12.0f);
+	i = example8(1,2,3,4,5,6,7,8,9,10,11,12);
+	f = example7x(1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f, 9.0f, 10.0f, 11.0f, 12.0f);
+	i = example8x(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);*/
+
+
+	using namespace std;
+
+	int* __ptr32 p32;
+	int* __ptr64 p64;
+/*
+	p32 = (int* __ptr32)malloc(4);
+	*p32 = 32;
+	cout << *p32 << endl;
+
+	p64 = (int* __ptr64)malloc(8);
+	*p64 = 64;
+	cout << *p64 << endl;*/
+
+	cout << "x86 Pointer size: " << sizeof(p32) << endl;
+	cout << "x64 Pointer size: " << sizeof(p64) << endl;
+}

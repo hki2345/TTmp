@@ -62,9 +62,9 @@ CRITICAL_SECTION g_cs;
 
 // CMFCApplication1App 초기화
 
-
-// CREATETHREAD - 오버로딩 함 - 비교 불가
-DWORD WINAPI FTh(LPVOID _Param)
+// CREATTHREAD - 오버로딩 함 - 비교 불가
+// BEGINTHREADEX
+UINT WINAPI FTh(LPVOID _Param)
 {
 	EnterCriticalSection(&g_cs);
 	Sleep(100);
@@ -75,11 +75,11 @@ DWORD WINAPI FTh(LPVOID _Param)
 	LeaveCriticalSection(&g_cs);
 
 
-	_endthread();
+	_endthreadex(0);
 	return 0;
 }
 // BEGINTHREAD
-UINT WINAPI STh(PVOID _Param)
+void _cdecl STh(PVOID _Param)
 {
 	EnterCriticalSection(&g_cs);
 	Sleep(100);
@@ -89,7 +89,6 @@ UINT WINAPI STh(PVOID _Param)
 	}
 	LeaveCriticalSection(&g_cs);
 	_endthread();
-	return 0;
 }
 // AFXTHREAD
 UINT TTh(LPVOID _Param)
@@ -101,7 +100,6 @@ UINT TTh(LPVOID _Param)
 		g_nSum += i;
 	}
 	LeaveCriticalSection(&g_cs);
-	_endthread();
 	return 0;
 }
 
@@ -138,13 +136,17 @@ BOOL CMFCApplication1App::InitInstance()
 	// 결국 버그가 되버린 함수가 되었다. 
 	// 오버로드 해노았다 ㅋㅋㅋㅋㅋ
 	// H1 = (HANDLE)CreateThread(NULL, 0, &FTh, );
-	H1 = (HANDLE)_beginthreadex(nullptr, 0, &STh, nullptr, 0, (unsigned*)& TID2);
-	H2 = (HANDLE)_beginthreadex(nullptr, 0, &STh, nullptr, 0, (unsigned*)& TID2);
+	H1 = (HANDLE)_beginthreadex(nullptr, 0, &FTh, nullptr, 0, (unsigned*)& TID2);
+	H2 = (HANDLE)_beginthread(&STh, 0, nullptr);
 	H3 = AfxBeginThread(&TTh, &T);
+
+	// CreateThread();
 
 	WaitForSingleObject(H1, INFINITE);
 	WaitForSingleObject(H2, INFINITE);
 	WaitForSingleObject(H3->m_hThread, INFINITE);
+
+	CloseHandle(H1);
 
 	// OLE 라이브러리를 초기화합니다.
 	if (!AfxOleInit())
