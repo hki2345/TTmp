@@ -1,32 +1,39 @@
-#include "Timer.h"
+#include "KTimer.h"
 #include <Windows.h>
 #include <iostream>
 
-Timer::Timer(const char* _Name) :
+KTimer::KTimer(const char* _Name) :
 	StartingTime(LARGE_INTEGER()),
 	EndingTime(LARGE_INTEGER()),
 	ElapsedMicroseconds(LARGE_INTEGER()),
-	Frequency(LARGE_INTEGER())
+	Frequency(LARGE_INTEGER()),
+	m_Name(nullptr)
 {
+	m_Name = new char[NAME];
+
 	for (size_t i = 0; i < NAME; i++)
 	{
 		m_Name[i] = _Name[i];
 	}
 }
 
-Timer::~Timer()
+KTimer::~KTimer()
 {
+	if (m_Name != nullptr)
+	{
+		delete[] m_Name;
+	}
 }
 
 
 
-void Timer::start()
+void KTimer::start()
 {
 	QueryPerformanceFrequency(&Frequency);
 	QueryPerformanceCounter(&StartingTime);
 }
 
-void Timer::stop()
+void KTimer::stop()
 {
 	QueryPerformanceCounter(&EndingTime);
 	ElapsedMicroseconds.QuadPart = EndingTime.QuadPart - StartingTime.QuadPart;
@@ -36,7 +43,12 @@ void Timer::stop()
 	ElapsedMicroseconds.QuadPart /= Frequency.QuadPart;
 }
 
-void Timer::log()
+void KTimer::log_second()
 {
 	std::cout << m_Name << ": " << ElapsedMicroseconds.QuadPart * .000001 << "sec"<< std:: endl;
+}
+
+void KTimer::log_us()
+{
+	std::cout << m_Name << ": " << ElapsedMicroseconds.QuadPart << "us" << std::endl;
 }
