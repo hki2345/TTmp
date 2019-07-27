@@ -1,6 +1,6 @@
 #include "kthis.h"
 
-class A
+class processA
 {
 public:
 	int __cdecl Func1(int _x, int _y, int _z, ...)
@@ -33,13 +33,13 @@ public:
 	}
 
 public:
-	A() {};
-	~A() {};
+	processA() {};
+	~processA() {};
 };
 
 int main()
 {
-	A a;
+	processA a;
 
 	a.Func1(1, 2, 3, 4);
 	a.Func3(1, 2, 3, 4);

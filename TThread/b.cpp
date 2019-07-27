@@ -50,14 +50,14 @@ void  ThTh(int a)
 }
 
 
-class A
+class processA
 {
 private:
 	int iA, iB;
 
 public:
-	A(const int& _x, const int& _y);
-	~A();
+	processA(const int& _x, const int& _y);
+	~processA();
 
 public:
 	void  FoTh(int _a, int _b)
@@ -74,11 +74,11 @@ public:
 	}
 };
 
-A::A(const int& _x, const int& _y) : iA(_x), iB(_y)
+processA::processA(const int& _x, const int& _y) : iA(_x), iB(_y)
 {
 }
 
-A::~A()
+processA::~processA()
 {
 }
 
@@ -91,7 +91,7 @@ int main()
 
 	InitializeCriticalSection(&g_cs);
 
-	A ca(2, 3);
+	processA ca(2, 3);
 
 	// 생성자
 	std::thread t1(FiTh, 0);
@@ -109,7 +109,7 @@ int main()
 		return; }, 2, 3);
 
 	// 객체 안의 함수
-	std::thread t3{ &A::FoTh, &ca, 2, 3 };
+	std::thread t3{ &processA::FoTh, &ca, 2, 3 };
 
 	t1.join();
 	t2.join();

@@ -1,20 +1,4 @@
 ﻿  a.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\thread(39,14): error C2672:  'std::invoke': 일치하는 오버로드된 함수가 없습니다.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\thread(46): message :  컴파일되는 함수 템플릿 인스턴스화 'unsigned int std::thread::_Invoke<_Tuple,0,1>(void *) noexcept'에 대한 참조를 확인하세요.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\thread(46): message :         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\thread(46): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\thread(46): message :             _Tuple=_Tuple
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\thread(46): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\thread(52): message :  컴파일되는 함수 템플릿 인스턴스화 'unsigned int (__stdcall *std::thread::_Get_invoke<_Tuple,0,1>(std::integer_sequence<unsigned int,0,1>) noexcept)(void *)'에 대한 참조를 확인하세요.
-D:\Class\6.0\TTx\TThread\a.cpp(87): message :  컴파일되는 함수 템플릿 인스턴스화 'std::thread::thread<void(__cdecl *)(int),const char(&)[5],void>(_Fn &&,const char (&)[5])'에 대한 참조를 확인하세요.
-D:\Class\6.0\TTx\TThread\a.cpp(87): message :         with
-D:\Class\6.0\TTx\TThread\a.cpp(87): message :         [
-D:\Class\6.0\TTx\TThread\a.cpp(87): message :             _Fn=void (__cdecl *)(int)
-D:\Class\6.0\TTx\TThread\a.cpp(87): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\chrono(595): message :  컴파일되는 클래스 템플릿 인스턴스화 'std::chrono::duration<double,std::ratio<1,1>>'에 대한 참조를 확인하세요.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\chrono(172): message :  컴파일되는 클래스 템플릿 인스턴스화 'std::chrono::duration<__int64,std::nano>'에 대한 참조를 확인하세요.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\chrono(574): message :  컴파일되는 클래스 템플릿 인스턴스화 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>'에 대한 참조를 확인하세요.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\thread(35,1): error C2893:  'unknown-type std::invoke(_Callable &&,_Types &&...) noexcept(<expr>)' 함수 템플릿을 특수화하지 못했습니다.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\thread(35,1): message :  다음 템플릿 인수 사용:
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\thread(35,1): message :  '_Callable=void (__cdecl *)(int)'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\thread(35,1): message :  '_Types={const char *}'
+  b.cpp
+  코드를 생성하고 있습니다...
+  TThread.vcxproj -> D:\Class\6.0\TTmp\Debug\TThread.exe
